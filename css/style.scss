@@ -69,6 +69,7 @@ a {
         background-color: #fff;
         padding-top: 10px;
         user-select: none;
+        transition: all 0.5s ease-out;
         -webkit-tap-highlight-color: transparent;
 
 
@@ -168,6 +169,7 @@ a {
             position: fixed;
             height: 100%;
             left: -100%;
+            box-shadow: inset 0px 0px 20px 0.1px rgba(106, 0, 243, 0.25);
         }
 
         .menu.active {

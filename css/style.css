@@ -74,6 +74,8 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -170,6 +172,8 @@ a {
     position: fixed;
     height: 100%;
     left: -100%;
+    -webkit-box-shadow: inset 0px 0px 20px 0.1px rgba(106, 0, 243, 0.25);
+            box-shadow: inset 0px 0px 20px 0.1px rgba(106, 0, 243, 0.25);
   }
   .home .menu.active {
     left: 0;
