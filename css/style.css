@@ -70,9 +70,11 @@ a {
   min-height: 100%;
   background-color: #fff;
   padding-top: 10px;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  opacity: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .home .menu .profile .icon {
@@ -92,8 +94,6 @@ a {
 .home .menu .menu-item {
   cursor: pointer;
   font-size: 18px;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
   font-weight: 700;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -110,8 +110,8 @@ a {
 .home .menu .menu-item .menu-context {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .home .menu .menu-item .menu-context .menu-option {
@@ -168,6 +168,7 @@ a {
   }
   .home .menu {
     position: fixed;
+    height: 100%;
     left: -100%;
   }
   .home .menu.active {

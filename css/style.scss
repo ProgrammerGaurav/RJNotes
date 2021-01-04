@@ -9,6 +9,7 @@ a {
     text-decoration: none;
 }
 
+
 .navbar {
     position: fixed;
     color: #fff;
@@ -67,8 +68,9 @@ a {
         min-height: 100%;
         background-color: #fff;
         padding-top: 10px;
-        transition: all 0.5s ease-out;
-        opacity: 1;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
 
         .profile {
             .icon {
@@ -89,7 +91,6 @@ a {
         .menu-item {
             cursor: pointer;
             font-size: 18px;
-            transition: all 0.2s ease-out;
             font-weight: 700;
             user-select: none;
 
@@ -100,7 +101,7 @@ a {
             .menu-context {
                 max-height: 0;
                 overflow: hidden;
-                transition: all 0.2s ease-out;
+                transition: all 0.2s ease-in;
 
                 .menu-option {
                     margin: 20px 0px 0px 20px;
@@ -165,6 +166,7 @@ a {
     .home {
         .menu {
             position: fixed;
+            height: 100%;
             left: -100%;
         }
 
