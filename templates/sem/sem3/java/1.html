@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Class in Java </div>
+    <div class="subtitle">
+        Classes and Objects in Java. Classes and Objects are basic concepts of Object Oriented Programming which revolve
+        around the real life entities. A class is a user defined blueprint or prototype from which objects are created.
+        It represents the set of properties or methods that are common to all objects of one type.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                class student
+                {
+                    String name;
+                    int roll;
+                    public student(String name, int roll)
+                    {
+                        this.name = name;
+                        this.roll = roll;
+                    }
+                    public void getData() {
+                        System.out.println("Name = " + this.name);
+                        System.out.println("Roll No = " + this.roll);
+                    }
+                }
+                public class main
+                {
+                    public static void main(String[] args)
+                    {
+                        student s1 = new student("Gaurav", 26);
+                        student s2 = new student("Harshad", 82);
+                        s1.getData();
+                        s2.getData();
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Name = Gaurav
+                Roll No = 26
+                Name = Harshad
+                Roll No = 82
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

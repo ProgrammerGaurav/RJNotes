@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Celsius to Faranite </div>
+    <div class="subtitle">
+        Write a script that asks users for the temperature in F and prints the temperature in C.
+        (Conversion: Celsius = (F - 32) * 5/9).
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                F = float(input("Enter temperature in in faranite: "))
+                Celsius = (F - 32) * 5/9
+                print("Temperature in Celsius = ", Celsius)
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Enter temperature in in faranite:  105
+                Temperature in Celsius =  40.55555555555556
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

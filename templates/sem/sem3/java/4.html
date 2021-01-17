@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Method Overloading in Java </div>
+    <div class="subtitle">
+        If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+        Suppose you have to perform addition of the given numbers but there can be any number of arguments, if you write
+        the method such as a(int,int) for two parameters, and b(int,int,int) for three parameters then it may be
+        difficult for you as well as other programmers to understand the behavior of the method because its name
+        differs.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                class Adder {
+                    static int add(int a, int b) {
+                        return a + b;
+                    }
+                    static int add(int a, int b, int c) {
+                        return a + b + c;
+                    }
+                
+                }
+                public class main {
+                
+                    public static void main(String[] args) {
+                        System.out.println(Adder.add(11, 11));
+                        System.out.println(Adder.add(11, 11, 11));
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+               22
+               33
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

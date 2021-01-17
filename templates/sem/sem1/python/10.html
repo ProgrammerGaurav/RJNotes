@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Classes in Python </div>
+    <div class="subtitle">
+        It is a collection of object and member function which access that object. It is declared with keyboard class
+        followed by class name.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Creating a class
+                class student:
+                    # Initialization of values
+                    def __init__(self, name, rollno):
+                        self.name = name
+                        self.rollno = rollno
+                
+                    # Function to display name and rollno
+                    def displayinfo(self):
+                        print("Name : ", self.name)
+                        print("Roll No. : ", self.rollno)
+                
+                # creating two object of class student
+                student1 = student("Gaurav", 26)
+                student2 = student("Harshad", 89)
+                
+                student1.displayinfo()
+                student2.displayinfo()
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Name :  Gaurav
+                Roll No. :  26
+                Name :  Harshad
+                Roll No. :  89
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

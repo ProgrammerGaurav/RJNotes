@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Basic Calculator </div>
+    <div class="subtitle">
+        In this example you will learn to create a simple calculator that can add, subtract, multiply or divide
+        depending upon the input from the user.
+
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+            def add(num1, num2):
+                return num1 + num2
+            def subtract(num1, num2):
+                return num1 - num2
+            def multiply(num1, num2):
+                return num1 * num2
+            def divide(num1, num2):
+                return num1 / num2
+            print("Please select operation -\n"
+                    "1. Add\n"
+                      "2. Subtract\n"
+                      "3. Multiply\n"
+                      "4. Divide\n")
+            select = input("Select operations form 1, 2, 3, 4 :")
+            number_1 = int(input("Enter first number: "))
+            number_2 = int(input("Enter second number: "))
+            if select == '1':
+                print(number_1, "+", number_2, "=", add(number_1, number_2))
+            elif select == '2':
+                print(number_1, "-", number_2, "=", subtract(number_1, number_2))
+            elif select == '3':
+                print(number_1, "*", number_2, "=", multiply(number_1, number_2))
+            elif select == '4':
+                print(number_1, "/", number_2, "=", divide(number_1, number_2))
+            else:
+                print("Invalid input")
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Please select operation -
+                1. Add
+                2. Subtract
+                3. Multiply
+                4. Divide
+                Select operations form 1, 2, 3, 4 : 1
+                Enter first number:  3
+                Enter second number:  4
+                3 + 4 = 7
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

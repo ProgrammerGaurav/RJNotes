@@ -10,6 +10,14 @@ toggle.addEventListener('click', () => {
 const menus = document.querySelectorAll('.menu-item')
 menus.forEach(menu => {
     menu.querySelector('.menu-title').addEventListener('click', () => {
+        menus.forEach(menuu => {
+            const panel = menuu.querySelector('.menu-context');
+
+            if (panel.style.maxHeight && menu != menuu) {
+                menuu.classList.toggle('active')
+                panel.style.maxHeight = null;
+            }
+        });
         menu.classList.toggle('active')
         const panel = menu.querySelector('.menu-context');
         if (panel.style.maxHeight) {
@@ -19,6 +27,7 @@ menus.forEach(menu => {
         }
     });
 });
+
 const sidebarToggle = document.querySelector('.sidebar-toggle');
 const sidebar = document.querySelector('.menu');
 const context = document.querySelector('.context');

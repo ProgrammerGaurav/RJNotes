@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Math module </div>
+    <div class="subtitle">
+        This module provides access to the mathematical functions defined by the C standard.
+        It consist of pre-defined functions which we can use for calculations in our program.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Import math module
+                from math import *
+
+                a = 4
+
+                # pow to calculate power
+                print(pow(a, 2))
+
+                # sqrt for square root
+                print(sqrt(a))
+
+                # factorial to calculate factorial
+                print(factorial(a))
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                16.0
+                2.0
+                24
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="title">Random module </div>
+    <div class="subtitle">
+        This module implements pseudo-random number generators for various distributions.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Import Random module
+                from random import *
+
+                # randint function returns random numbers between the parameters
+                print(randint(1, 6))
+
+                # choice Return a random element from the non-empty sequence seq. If seq is empty, raises IndexError.
+                a = [1, 2, 3, 4, 5, 6]
+                print(choice(a))
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                6
+                3
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

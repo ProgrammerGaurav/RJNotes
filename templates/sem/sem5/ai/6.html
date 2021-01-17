@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem5/ai/ai.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Neural Network algorithm</div>
+    <div class="subtitle">
+        <b>Artificial neural networks</b> (ANN) or connectionist systems are computing systems that are inspired by, but
+        not
+        necessarily identical to, the biological neural networks that constitute animal brains. Such systems "learn" to
+        perform tasks by considering examples, generally without being programmed with any task-specific rules.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                from math import exp
+                #Calculate neuron activation for an input
+                def activate(weights,inputs):
+                    activation=weights[-1]
+                    for i in range(len(weights)-1):
+                        activation+=weights[i]*inputs[i]
+                    print(activation)
+                    return activation
+                #Transfer neuron activation
+                def transfer(activation):
+                    return 1.0/(1.0+exp(-activation))
+                #Forward propagate input to a network output
+                def forward_propagate(network,row):
+                    inputs=row
+                    for layer in network:
+                        new_inputs=[]
+                        for neuron in layer:
+                            activation=activate(neuron['weights'],inputs)
+                            neuron['output']=transfer(activation)
+                            print(activation)
+                            new_inputs.append(neuron['output'])
+                    inputs=new_inputs
+                    return inputs
+                #Test forward propagation
+                network=[[{'weights':[0.13,0.84]}],[{'weights':[0.25,0.49]}],[{'weights':[0.44,0.65]}]]
+                row=[1]
+                output=forward_propagate(network,row)
+                print(output)
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                0.97
+                0.97
+                0.74
+                0.74
+                1.09
+                1.09
+                [0.7483817216070642]
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

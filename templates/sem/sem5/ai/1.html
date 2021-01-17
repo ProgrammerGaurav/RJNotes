@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem5/ai/ai.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Breadth First Search Algorithm </div>
+    <div class="subtitle">
+        <b>Breadth-first search(BFS)</b> is an algorithm for traversing or searching tree or graph data structures. It
+        startsat the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key'), and
+        explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+                <code class="language-python">
+                    # import
+                    from collections import defaultdict
+
+                    # This class is used to make a directed graph using adjacency list representation
+                    class Graph:
+                        # a default dictionary to store graph, is invoked when when class object is intialiazed.
+                        def __init__(self):
+                            self.graph=defaultdict(list)
+
+                        # function to add a directed edge to the graph
+                        def addEdge(self,u,v):
+                            self.graph[u].append(v)
+
+                        # function for BFS traversal
+                        def BFS(self,s):
+                            # marking vertices as not visited throughout the graph
+                            visited=[False]*(len(self.graph))
+
+                            # create a list to maintain queue of vertices
+                            queue=[]
+
+                            # mark the source node as visited and enqueue it
+                            queue.append(s)
+                            visited[s]=True
+
+                            while queue:
+                                # dequeue a vertex from queue and print it
+                                s=queue.pop(0)
+                                print(s,end = " ")
+
+                                # get all adjacent vertices of the dequeued vertex s.
+                                for i in self.graph[s]:
+                                    #If a adjacent has not been visited, then mark it as visited and enqueue it
+                                    if visited[i]==False:
+                                        queue.append(i)
+                                        visited[i]=True
+
+                    #Driver code
+                    # creating a graph g
+                    g=Graph()
+
+                    # adding edges to the graph g.
+                    g.addEdge(0,1)
+                    g.addEdge(0,2)
+                    g.addEdge(1,2)
+                    g.addEdge(2,0)
+                    g.addEdge(2,3)
+                    g.addEdge(3,3)
+
+                    # printing the BFS traversal.
+                    print("Following is Breadth First Traversal (starting from vertex 2) :")
+                    g.BFS(2)
+                </code>
+            </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Following is Breadth First Traversal (starting from vertex 2) :
+                2 0 3 1
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

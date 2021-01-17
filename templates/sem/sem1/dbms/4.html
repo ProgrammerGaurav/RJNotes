@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/dbms/dbms.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">
+        1) Date Functions
+    </div>
+    <div class="subtitle">
+        adddate()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select adddate("1988-01-02",31);
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +--------------------------+
+                | adddate("1988-01-02",31) |
+                +--------------------------+
+                | 1988-02-02               |
+                +--------------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        datediff()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select datediff("1988-01-05","1988-01-03");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +-------------------------------------+
+                | datediff("1988-01-05","1988-01-03") |
+                +-------------------------------------+
+                |                                   2 |
+                +-------------------------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        month()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select month("1988-01-02");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +---------------------+
+                | month("1988-01-02") |
+                +---------------------+
+                |                   1 |
+                +---------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        year()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select year("1988-01-02");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +--------------------+
+                | year("1988-01-02") |
+                +--------------------+
+                |               1988 |
+                +--------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        hour()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select hour("10:05:03");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +------------------+
+                | hour("10:05:03") |
+                +------------------+
+                |               10 |
+                +------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        minute()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select minute("10:05:03");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +--------------------+
+                | minute("10:05:03") |
+                +--------------------+
+                |                  5 |
+                +--------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        second()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select second("10:05:03");
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +--------------------+
+                | second("10:05:03") |
+                +--------------------+
+                |                  3 |
+                +--------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        now()
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select now();
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +---------------------+
+                | now()               |
+                +---------------------+
+                | 2020-04-30 14:32:13 |
+                +---------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

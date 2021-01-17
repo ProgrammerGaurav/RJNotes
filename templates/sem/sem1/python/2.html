@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Area of Triangle </div>
+    <div class="subtitle">
+        Here s is the semi-perimeter and a, b and c are three sides of the triangle. Area of a triangle =
+        (s*(s-a)*(s-b)*(s-c))-1/2
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                a = int(input("Enter side A : "))
+                b = int(input("Enter side B : "))
+                c = int(input("Enter side C : "))
+                s = (a+b+c)/2
+                area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+                print("Area of triangle = ", area)
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Enter side A :  4
+                Enter side B :  3
+                Enter side C :  5
+                Area of triangle =  6.0
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

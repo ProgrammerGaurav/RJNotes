@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem5/ai/ai.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Sentimental Analysis on Tweets</div>
+    <div class="subtitle">
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # importing modules
+                import tweets
+                import pandas as pd
+                import numpy as np
+                import re
+                from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+                import matplotlib.pyplot as plt
+
+                # Converting Raw data from tweets.py file to DataFrames
+
+
+                def tweetdf():
+                    # Initializing the DataFrame
+                    df = pd.DataFrame(data=[tweet['text']
+                                            for tweet in tweets.tweets], columns=['tweets'])
+                    # adding columns to the DataFrame using numpy.array()
+                    df['id'] = np.array([tweet['id'] for tweet in tweets.tweets])
+                    df['len'] = np.array([len(tweet['text']) for tweet in tweets.tweets])
+                    df['date'] = np.array([tweet['created_at'] for tweet in tweets.tweets])
+                    df['likes'] = np.array([tweet['favourite_count']
+                                            for tweet in tweets.tweets])
+                    df['retweets'] = np.array([tweet['retweet_count']
+                                            for tweet in tweets.tweets])
+                    return df
+                # Cleaning the tweet from urls and hashtags
+
+
+                def clean_tweet(tweet):
+                    return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
+
+                # Analysing the sentiments values in tweet deciding if tweet is negative, positive or neutral
+
+
+                def tweet_analyzer(tweet):
+                    sia = SentimentIntensityAnalyzer()
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Hello World!
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

@@ -79,20 +79,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.home .menu .profile .icon {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  vertical-align: middle;
-  background-size: 40px 40px;
-  border-radius: 100%;
-}
-
-.home .menu .profile .name {
-  display: inline-block;
-  font-weight: 500;
-}
-
 .home .menu .menu-item {
   cursor: pointer;
   font-size: 18px;
@@ -118,6 +104,9 @@ a {
 
 .home .menu .menu-item .menu-context .menu-option {
   margin: 20px 0px 0px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
 }
 
 .home .menu .menu-item.active .fas {
@@ -131,6 +120,68 @@ a {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   z-index: 0;
+}
+
+.home .context .hero {
+  margin-top: calc((100vh - 78px - 64px)/2);
+  text-align: center;
+}
+
+.home .context .hero .title {
+  text-align: center;
+  margin: 10px;
+}
+
+.home .context .hero .sourcecode {
+  background-color: #161A22;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.home .context hr {
+  margin: 20px 0px;
+  border-top: 2px solid black;
+}
+
+.home .context .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+.home .context .tutorial {
+  padding: 10px 0px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.home .context .tutorial iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home .context .tutorial::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+
+.home .context .subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+.home .context .code {
+  font-weight: 700;
+}
+
+.home .context .code code {
+  font-weight: 500;
 }
 
 .footer {

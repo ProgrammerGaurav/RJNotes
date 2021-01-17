@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/dbms/dbms.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="subtitle">
+        Deleting a Column in a table
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                alter table student
+                drop column roll_no;
+                select * from student;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+
+                | id | Name    |
+                +----+---------+
+                |  1 | Gaurav  |
+                |  2 | Harshad |
+                +----+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Adding a Column in a table
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                alter table student
+                add column roll_no int;
+                select * from student;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+---------+
+                | id | Name    | roll_no |
+                +----+---------+---------+
+                |  1 | Gaurav  |    NULL |
+                |  2 | Harshad |    NULL |
+                +----+---------+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Renaming a table
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                rename table student to students;
+                show tables;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +-------------------+
+                | Tables_in_student |
+                +-------------------+
+                | students          |
+                +-------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Truncating a table (Deleting all the content of a table)
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                truncate table students;
+                select * from students;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Empty set (0.00 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Dropping a table (Deleting a table)
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                drop table students;
+                select * from students;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                ERROR 1146 (42S02): Table 'student.students' doesn't exist
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

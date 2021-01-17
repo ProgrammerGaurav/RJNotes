@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/dbms/dbms.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="subtitle">
+        Viewing all databases
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                show databases;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +--------------------+
+                | Database           |
+                +--------------------+
+                | information_schema |
+                | mysql              |
+                | performance_schema |
+                +--------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Creating a Database(Let the Database name be student)
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                create database student;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Query OK, 1 row affected (0.00 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Using a Database
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                use student;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Database changed
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Creating a table
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                create table student(
+                    id int NOT NULL,
+                    Name varchar(20) NOT NULL,
+                    Roll_No int NOT NULL,
+                    PRIMARY KEY(id)
+                );
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Query OK, 0 rows affected (0.09 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Inserting a Record
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                insert into student values(1, "Gaurav", 26);
+                insert into student values(2, "Harshad", 89);
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Query OK, 1 row affected (0.05 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Display content of a table
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select * from student;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+---------+
+                | id | Name    | Roll_No |
+                +----+---------+---------+
+                |  1 | Gaurav  |      26 |
+                |  2 | Harshad |      89 |
+                +----+---------+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

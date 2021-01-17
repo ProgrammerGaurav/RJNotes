@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">String Literals </div>
+    <div class="subtitle">
+        String literals in python are surrounded by either single quotation marks, or double quotation marks. 'hello' is
+        the same as "hello".
+        You can display a string literal with the print() function:
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Declaring a String Variable
+                a = "Hello, World!"
+
+                # Indexing
+                print(a[2:5])
+
+                # Negative Indexing
+                print(a[-5:-2])
+
+                # String Length
+                print(len(a))
+
+                # Capatilize a String
+                print(a.upper())
+
+                # Lowerize a String
+                print(a.lower())
+
+                # Replace Characters in String
+                print(a.replace("H", "J"))
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                llo
+                orl
+                13
+                HELLO, WORLD!
+                hello, world!
+                Jello, World!
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Python List </div>
+    <div class="subtitle">
+        List is a collection which is ordered and changeable. Allows duplicate members.
+
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Creating a list
+                thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+                # Adding Element to list
+                thislist.append("pineapple")
+                print(thislist)
+
+                # Removing Element to list
+                thislist.remove("apple")
+                print(thislist)
+
+                # Printing a List
+                print(thislist)
+
+                # Printing 2nd element of list
+                print(thislist[1])
+
+                # Printing Last element of list
+                print(thislist[-1])
+
+                # Return the third, fourth, and fifth item:
+                print(thislist[2:5])
+
+                # This example returns the items from the beginning to "kiwi":
+                print(thislist[:4])
+
+                # This example returns the items from the "kiwi" to endling:
+                print(thislist[3:])
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango', 'pineapple']
+                ['banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango', 'pineapple']
+                ['banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango', 'pineapple']
+                cherry
+                pineapple
+                ['orange', 'kiwi', 'melon']
+                ['banana', 'cherry', 'orange', 'kiwi']
+                ['kiwi', 'melon', 'mango', 'pineapple']
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="title">Python Tuple </div>
+    <div class="subtitle">
+        List is a collection which is ordered and changeable. Allows duplicate members.
+        Python Tuple is same as list except it is immutable(uneditable)
+        A tuple is an immutable sequence of Python objects. Tuples are sequences, just like lists. The differences
+        between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas
+        lists use square brackets.
+        You can perform every list operation on tuple except operations releated to adding and removing
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # Creating a list
+                thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+
+                # Adding Element to tuple
+                #thistuple.append("pineapple")
+                #print(thistuple)
+
+                # Removing Element to tuple
+                #thistuple.remove("apple")
+                #print(thistuple)
+
+                # Printing a List
+                print(thistuple)
+
+                # Printing 2nd element of tuple
+                print(thistuple[1])
+
+                # Printing Last element of tuple
+                print(thistuple[-1])
+
+                # Return the third, fourth, and fifth item:
+                print(thistuple[2:5])
+
+                # This example returns the items from the beginning to "kiwi":
+                print(thistuple[:4])
+
+                # This example returns the items from the "kiwi" to endling:
+                print(thistuple[3:])
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                ('apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango')
+                banana
+                mango
+                ('cherry', 'orange', 'kiwi')
+                ('apple', 'banana', 'cherry', 'orange')
+                ('orange', 'kiwi', 'melon', 'mango')
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem5/ai/ai.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Shuffle Deck of Cards </div>
+    <div class="subtitle">
+        In the program, we used the product() function in itertools module to create a deck of cards. This function
+        performs the Cartesian product of the two sequences.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                #import
+                import itertools,random
+
+                # initaliazing list of all the cards from 1 to 14 for all the four categories
+                deck=list(itertools.product((range(1,14)),['Space','Heart','Diamond','Club']))
+
+                # shuffling the deck list
+                random.shuffle(deck)
+
+                #printing the first five cards of the deck
+                print("You got:")
+                for i in range(5):
+                    print(deck[i][0],"of",deck[i][1])
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                You got:
+                6 of Heart
+                12 of Club
+                6 of Diamond
+                7 of Diamond
+                4 of Heart
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

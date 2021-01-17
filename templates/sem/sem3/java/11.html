@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Java List </div>
+    <div class="subtitle">
+        List in Java provides the facility to maintain the ordered collection. It contains the index-based methods to
+        insert, update, delete and search the elements. It can have the duplicate elements also. We can also store the
+        null elements in the list.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                import java.util.*;
+                public class main {
+                    public static void main(String[] args) {
+                        // Let us create a list
+                        List l1 = new ArrayList();
+                        l1.add(0, 1); // adds 1 at 0 index
+                        l1.add(1, 2); // adds 2 at 1 index
+                        System.out.println(l1); // [1, 2]
+                        // Let us create another list
+                        List l2 = new ArrayList();
+                        l2.add(1);
+                        l2.add(2);
+                        l2.add(3);
+                        // will add list l2 from 1 index
+                        l1.addAll(1, l2);
+                        System.out.println(l1);
+                        l1.remove(1); // remove element from index 1
+                        System.out.println(l1); // [1, 2, 3, 2]
+                        // prints element at index 3
+                        System.out.println(l1.get(3));
+                        l1.set(0, 5); // replace 0th element with 5
+                        System.out.println(l1); // [5, 2, 3, 2]
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                [1, 2]
+                [1, 1, 2, 3, 2]
+                [1, 2, 3, 2]
+                2
+                [5, 2, 3, 2]                
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

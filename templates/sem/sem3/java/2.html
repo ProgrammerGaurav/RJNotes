@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Inheritance in Java </div>
+    <div class="subtitle">
+        Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent
+        object. The idea behind inheritance in Java is that you can create new classes that are built upon existing
+        classes. When you inherit from an existing class, you can reuse methods and fields of the parent class.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                class Person {
+                    int id;
+                    String name;
+                
+                    Person(int id, String name) {
+                        this.id = id;
+                        this.name = name;
+                    }
+                }
+                
+                class Emp extends Person {
+                    float salary;
+                
+                    Emp(int id, String name, float salary) {
+                        super(id, name);
+                        this.salary = salary;
+                    }
+                
+                    void display() {
+                        System.out.println(id + " " + name + " " + salary);
+                    }
+                }
+                
+                public class main {
+                    public static void main(String[] args) {
+                        Emp e1 = new Emp(1, "Gaurav", 45000f);
+                        Emp e2 = new Emp(2, "Harshad", 45000f);
+                        e1.display();
+                        e2.display();
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                1 Gaurav 45000.0
+                2 Harshad 45000.0
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

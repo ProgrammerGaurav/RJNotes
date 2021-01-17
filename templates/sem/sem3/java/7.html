@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Exception Handling in Java </div>
+    <div class="subtitle">
+        The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that normal flow
+        of the application can be maintained.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                public class main {
+                    public static void main(String args[]) {
+                        try {
+                            //code that may raise exception  
+                            int data = 100 / 0;
+                        } catch (ArithmeticException e) {
+                            System.out.println(e);
+                        }
+                        //rest code of the program   
+                        System.out.println("rest of the code...");
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                java.lang.ArithmeticException: / by zero
+                rest of the code...
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

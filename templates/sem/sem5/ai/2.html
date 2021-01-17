@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem5/ai/ai.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Depth First Search Algorithm </div>
+    <div class="subtitle">
+        <b>Depth-first search</b> (DFS) is an algorithm for traversing or searching tree or graph data structures. The
+        algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and
+        explores as far as possible along each branch before backtracking.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                # imports
+                from collections import defaultdict
+
+                # This class is used to make a directed graph using adjacency list representation
+                class Graph:
+                    # a default dictionary to store graph, is invoked when when class object is intialiazed.
+                    def __init__(self):
+                        self.graph=defaultdict(list)
+
+                    # function to add a directed edge to the graph
+                    def addEdge(self,u,v):
+                        self.graph[u].append(v)
+
+                    # function for DFS traversal
+                    def DFSutil(self,v,visited):
+                        # Mark the current node as visited and print it
+                        visited[v]=True
+                        print(v)
+
+                        # Recur DSFutil() for all the vertices adjacent to current vertex
+                        for i in self.graph[v]:
+                            # check whether vertex is visited or not, if not then call DSFutil() using the unvisited vertex as current vertex
+                            if visited[i]==False:
+                                self.DFSutil(i,visited)
+
+                    # The function to do DFS traversal. It uses recursive DFSUtil()
+                    def DFS(self,v):
+                        # marking vertices as not visited throughout the graph
+                        visited=[False]*(len(self.graph))
+                        #Call the recursive helper function to print DFS traversal
+                        self.DFSutil(v,visited)
+
+                #Driver code
+                #creating graph g.
+                g=Graph()
+
+                # adding directed edges to graph g
+                g.addEdge(0,1)
+                g.addEdge(0,2)
+                g.addEdge(1,2)
+                g.addEdge(2,0)
+                g.addEdge(2,3)
+                g.addEdge(3,3)
+
+                # printing the BFS traversal.
+                print("Following is DFS from (starting from vertex 2) : ")
+                g.DFS(2)
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Following is DFS from (starting from vertex 2) :
+                2
+                0
+                1
+                3
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

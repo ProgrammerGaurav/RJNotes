@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Polymorphism in Java </div>
+    <div class="subtitle">
+        Polymorphism in Java is a concept by which we can perform a single action in different ways. So polymorphism
+        means many forms. There are two types of polymorphism in Java: compile-time polymorphism and runtime
+        polymorphism. We can perform polymorphism in java by method overloading and method overriding.
+
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                class Bank {
+                    int getRateOfInterest() {
+                        return 0;
+                    }
+                }
+                
+                class SBI extends Bank {
+                    int getRateOfInterest() {
+                        return 8;
+                    }
+                }
+                
+                class ICICI extends Bank {
+                    int getRateOfInterest() {
+                        return 7;
+                    }
+                }
+                
+                class AXIS extends Bank {
+                    int getRateOfInterest() {
+                        return 9;
+                    }
+                }
+                
+                class TestBank {
+                    public static void main(String args[]) {
+                        SBI s = new SBI();
+                        ICICI i = new ICICI();
+                        AXIS a = new AXIS();
+                        System.out.println("SBI Rate of Interest: " + s.getRateOfInterest());
+                        System.out.println("ICICI Rate of Interest: " + i.getRateOfInterest());
+                        System.out.println("AXIS Rate of Interest: " + a.getRateOfInterest());
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                SBI Rate of Interest: 8
+                ICICI Rate of Interest: 7
+                AXIS Rate of Interest: 9
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

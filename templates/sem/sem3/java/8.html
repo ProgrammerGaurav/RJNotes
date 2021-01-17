@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Java Packages </div>
+    <div class="subtitle">
+        A package in Java is used to group related classes. Think of it as a folder in a file directory. We use packages
+        to avoid name conflicts, and to write a better maintainable code.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                import java.util.Scanner;
+
+                class MyClass {
+                public static void main(String[] args) {
+                    Scanner myObj = new Scanner(System.in);
+                    System.out.println("Enter username");
+
+                    String userName = myObj.nextLine();
+                    System.out.println("Username is: " + userName);
+                }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Enter username
+                Gaurav
+                Username is: Gaurav
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

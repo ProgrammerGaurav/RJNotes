@@ -1,0 +1,290 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/dbms/dbms.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Simple MySQL Queries</div>
+    <div class="subtitle">
+        Creating a table employee
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                create table employee(
+                    id int NOT NULL,
+                    Name varchar(20) NOT NULL,
+                    salary int NOT NULL,
+                    PRIMARY KEY(id)
+                );
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Query OK, 0 rows affected (0.07 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Inserting values into employee
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                insert into employee values(1, "Gaurav", 1200000);
+                insert into employee values(2, "Harshad", 1200000);
+                insert into employee values(3, "ABC", 120000);
+                insert into employee values(4, "PQR", 100000);
+                insert into employee values(5, "XYZ", 10000);
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                Query OK, 1 row affected (0.00 sec)
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Selecting all columns
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select * from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+---------+
+                | id | Name    | salary  |
+                +----+---------+---------+
+                |  1 | Gaurav  | 1200000 |
+                |  2 | Harshad | 1200000 |
+                |  3 | ABC     |  120000 |
+                |  4 | PQR     |  100000 |
+                |  5 | XYZ     |   10000 |
+                +----+---------+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Selecting specific columns
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select id, name from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+
+                | id | name    |
+                +----+---------+
+                |  1 | Gaurav  |
+                |  2 | Harshad |
+                |  3 | ABC     |
+                |  4 | PQR     |
+                |  5 | XYZ     |
+                +----+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Filtering records based on single condition
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select * from employee where id < 3;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+---------+---------+
+                | id | Name    | Roll_No |
+                +----+---------+---------+
+                |  1 | Gaurav  |      26 |
+                |  2 | Harshad |      89 |
+                +----+---------+---------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        Filtering records based on multiple conditions
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select * from employee where id <= 5 AND salary < 250000;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----+------+--------+
+                | id | Name | salary |
+                +----+------+--------+
+                |  3 | ABC  | 120000 |
+                |  4 | PQR  | 100000 |
+                |  5 | XYZ  |  10000 |
+                +----+------+--------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="title">Applying aggregate functions count(), min(), max(), avg(), sum() on columns </div>
+    <div class="subtitle">
+        count():
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select count(*)"Total Employee" from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----------------+
+                | Total Employee |
+                +----------------+
+                |              5 |
+                +----------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        min():
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select min(salary) "Minimum Salary" from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----------------+
+                | Minimum Salary |
+                +----------------+
+                |          10000 |
+                +----------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        max():
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select max(salary) "Maximum Salary" from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----------------+
+                | Maximum Salary |
+                +----------------+
+                |        1200000 |
+                +----------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        avg():
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select avg(salary) "Average Salary" from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +----------------+
+                | Average Salary |
+                +----------------+
+                |    526000.0000 |
+                +----------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="subtitle">
+        sum():
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-sql">
+                select sum(salary) "Sum of Salary of every emoloyee" from employee;
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                +---------------------------------+
+                | Sum of Salary of every emoloyee |
+                +---------------------------------+
+                |                         2630000 |
+                +---------------------------------+
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

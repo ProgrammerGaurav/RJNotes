@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">String manipulation in Java </div>
+    <div class="subtitle">
+        Java String class provides a lot of methods to perform operations on strings such as compare(), concat(),
+        equals(), split(), length(), replace(), compareTo(), intern(), substring() etc.
+
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                public class main {
+                    public static void main(String args[]) {
+                        String s = "Sachin";
+                        System.out.println(s.toUpperCase()); //SACHIN
+                        System.out.println(s.toLowerCase()); //sachin
+                        System.out.println(s); //Sachin(no change in original)
+                        System.out.println(s.startsWith("Sa"));
+                        System.out.println(s.endsWith("n"));
+                        System.out.println(s.charAt(0)); //s
+                        System.out.println(s.charAt(3)); //h
+                        System.out.println(s.length()); //6
+                        int a = 10;
+                        String s1 = String.valueOf(a);
+                        System.out.println(s1 + 10);
+                        String s2 = "Java is a programming language. Java is a platform. Java is an Island.";
+                        String replaceString = s2.replace("Java", "Kava");
+                        System.out.println(replaceString);
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                SACHIN
+                sachin
+                Sachin
+                true
+                true
+                S
+                h
+                6
+                1010
+                Kava is a programming language. Kava is a platform. Kava is an Island.
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

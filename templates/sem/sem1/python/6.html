@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem1/python/python.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Python For Loops </div>
+    <div class="subtitle">
+        A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a
+        string).
+        This is less like the for keyword in other programming languages, and works more like an iterator method as
+        found in other object-orientated programming languages.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                for i in range(1, 6):
+                    print(i)
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                1
+				2
+				3
+				4
+				5
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <div class="title">Python While Loops </div>
+    <div class="subtitle">
+        In Python, While Loops is used to execute a block of statements repeatedly until a given condition is
+        satisfied. And when the condition becomes false, the line immediately after the loop in the program is
+        executed. While loop falls under the category of indefinite iteration. Indefinite iteration means that the
+        number of times the loop is executed isn’t specified explicitly in advance.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-python">
+                count = 1
+                while (count <= 5):
+                    print(count)     
+                    count = count + 1
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                1
+				2
+				3
+				4
+				5
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}

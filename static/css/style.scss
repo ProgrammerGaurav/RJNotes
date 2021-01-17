@@ -10,6 +10,7 @@ a {
 }
 
 
+
 .navbar {
     position: fixed;
     color: #fff;
@@ -64,6 +65,7 @@ a {
 .home {
     min-height: calc(100vh - 64px);
 
+
     .menu {
         min-height: 100%;
         background-color: #fff;
@@ -71,23 +73,6 @@ a {
         user-select: none;
         transition: all 0.5s ease-out;
         -webkit-tap-highlight-color: transparent;
-
-
-        .profile {
-            .icon {
-                width: 40px;
-                height: 40px;
-                display: inline-block;
-                vertical-align: middle;
-                background-size: 40px 40px;
-                border-radius: 100%;
-            }
-
-            .name {
-                display: inline-block;
-                font-weight: 500;
-            }
-        }
 
         .menu-item {
             cursor: pointer;
@@ -106,6 +91,9 @@ a {
 
                 .menu-option {
                     margin: 20px 0px 0px 20px;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    display: block;
                 }
             }
 
@@ -119,11 +107,81 @@ a {
         }
     }
 
+
+
     .context {
         box-shadow: 0px 0px 20px 0.1px rgba(106, 0, 243, 0.25);
         transition: all 0.5s ease-out;
         z-index: 0;
+
+        .hero {
+            margin-top: calc((100vh - 78px - 64px)/2);
+            text-align: center;
+
+            .title {
+                text-align: center;
+                margin: 10px;
+
+            }
+
+
+            .sourcecode {
+                background-color: #161A22;
+                color: #fff;
+                padding: 10px 20px;
+            }
+        }
+
+
+
+        hr {
+            margin: 20px 0px;
+            border-top: 2px solid black;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 10px 0px;
+        }
+
+        .tutorial {
+            padding: 10px 0px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .tutorial::after {
+            padding-top: 56.25%;
+            display: block;
+            content: '';
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 10px 0px;
+        }
+
+        .code {
+            font-weight: 700;
+
+            code {
+                font-weight: 500;
+            }
+        }
     }
+
+
 }
 
 .footer {

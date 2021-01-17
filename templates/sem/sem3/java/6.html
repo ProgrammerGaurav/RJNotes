@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Menu Starts  -->
+<div class="menu col-10 col-lg-2">
+    {% include 'sem/sem3/java/java.html' %}
+</div>
+<!-- Menu Ends  -->
+<!-- Context Starts  -->
+<div class="context col-12 col-lg-8">
+    <div class="title">Multithreading in java </div>
+    <div class="subtitle">
+        A thread is a lightweight sub-process, the smallest unit of processing. Multiprocessing and multithreading, both
+        are used to achieve multitasking.
+    </div>
+    <div class="code">
+        Code:
+        <pre>
+            <code class="language-java">
+                class Table {
+                    synchronized void printTable(int n) { //synchronized method  
+                        for (int i = 1; i <= 5; i++) {
+                            System.out.println(n * i);
+                            try {
+                                Thread.sleep(400);
+                            } catch (Exception e) {
+                                System.out.println(e);
+                            }
+                        }
+                
+                    }
+                }
+                class MyThread1 extends Thread {
+                    Table t;
+                    MyThread1(Table t) {
+                        this.t = t;
+                    }
+                    public void run() {
+                        t.printTable(5);
+                    }
+                }
+                class MyThread2 extends Thread {
+                    Table t;
+                    MyThread2(Table t) {
+                        this.t = t;
+                    }
+                    public void run() {
+                        t.printTable(100);
+                    }
+                }
+                public class main {
+                    public static void main(String args[]) {
+                        Table obj = new Table(); //only one object  
+                        MyThread1 t1 = new MyThread1(obj);
+                        MyThread2 t2 = new MyThread2(obj);
+                        t1.start();
+                        t2.start();
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <div class="code">
+        Output:
+        <pre>
+            <code class="language-txt">
+                5
+                10
+                15
+                20
+                25
+                100
+                200
+                300
+                400
+                50
+            </code>
+        </pre>
+    </div>
+    <hr>
+</div>
+</div>
+<!-- Context Ends  -->
+{% endblock body %}
